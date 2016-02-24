@@ -1,6 +1,6 @@
 {
   "name": "url-escape-tag",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A template tag for escaping url parameters based on ES2015 tagged templates.",
   "author": {
     "name": "Rui Marinho",
