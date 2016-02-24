@@ -1,0 +1,61 @@
+{
+  "name": "url-escape-tag",
+  "version": "0.0.0",
+  "description": "A template tag for escaping url parameters based on ES2015 tagged templates.",
+  "author": {
+    "name": "Rui Marinho",
+    "email": "rui.marinho@seegno.com",
+    "url": "http://seegno.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/seegno/url-escape-tag",
+  "bugs": "https://github.com/seegno/url-escape-tag/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seegno/url-escape-tag.git"
+  },
+  "main": "src/index.js",
+  "keywords": [
+    "encodeURIComponent",
+    "es2015",
+    "es6",
+    "escape",
+    "injection",
+    "literal",
+    "multiline",
+    "query",
+    "querystring",
+    "safe",
+    "string",
+    "tag",
+    "tagged",
+    "template"
+  ],
+  "options": {
+    "mocha": "--recursive --require should"
+  },
+  "scripts": {
+    "changelog": "github_changelog_generator --no-issues --header-label='# Changelog' --future-release=$npm_config_future_release && sed -i '' -e :a -e '$d;N;2,4ba' -e 'P;D' CHANGELOG.md",
+    "lint": "eslint src test && jscs src test",
+    "testdocker": "docker-compose run --rm sut",
+    "test": "mocha $npm_package_options_mocha",
+    "version": "npm run changelog --future-release=$npm_package_version && git add -A CHANGELOG.md"
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.1.8",
+    "eslint": "^1.10.3",
+    "eslint-config-seegno": "^2.0.0",
+    "eslint-plugin-babel": "^3.1.0",
+    "jscs": "^2.7.0",
+    "jscs-config-seegno": "^1.0.0",
+    "mocha": "^2.4.5",
+    "pre-commit": "^1.1.2",
+    "should": "^8.2.2"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "engines": {
+    "node": ">=4"
+  }
+}
